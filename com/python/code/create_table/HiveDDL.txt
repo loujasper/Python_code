@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS table2(
+id                             int       COMMENT'id'
+,sale_amount                   DEICIMAL(15,4)COMMENT'销售金额'
+,date                          date      COMMENT'日期'
+,type                          string    COMMENT'类型'
+) 
+ COMMENT '表2'
+PARTITIONED BY(pday STRING)
+ROW FORMAT DELIMIETED 
+  FIELDS TERMINATED BY '\t' 
+STORED AS INPUTFORMAT
+ 'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+ 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat';
+ 
+ 
+ 
+CREATE TABLE IF NOT EXISTS table1(
+id                             int       COMMENT'id'
+,user_name                     string    COMMENT'用户名称'
+,email                         string    COMMENT'用户邮箱'
+,card                          string    COMMENT'身份证号'
+,card2                         string    COMMENT'身份证号2'
+) 
+ COMMENT '表1'
+PARTITIONED BY(pday STRING)
+ROW FORMAT DELIMIETED 
+  FIELDS TERMINATED BY '\t' 
+STORED AS INPUTFORMAT
+ 'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+ 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat';
+ 
+ 
+ 
