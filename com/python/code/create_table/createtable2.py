@@ -56,7 +56,7 @@ def hiveddl(excel_name):
 
 
 
-        # print(sql)
+            print(sql)
             f.write(sql)
 
 
