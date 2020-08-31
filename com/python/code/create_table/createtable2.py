@@ -10,8 +10,6 @@ import sys
 import re
 import xlrd
 
-# 检验是否全是英文字符
-
 def hiveddl(excel_name):
     # 打开excel
     data = xlrd.open_workbook(excel_name)
