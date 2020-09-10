@@ -1,0 +1,48 @@
+
+# class DBHelper:
+#
+#     def __init__(self,sql,params=None):
+#         self.sql = sql
+#         self.params = params
+#         self.conn = None
+#         self.cur = None
+#
+#     # 连接数据库
+#     def ConnectionDatabase(self):
+#         try:
+#             self.conn = pymysql.connect(db_config['host'],db_config['port'],db_config['username'],
+#                                         db_config['password'],db_config['database'],db_config['charset'])
+#
+#         except Exception as e:
+#             logging.error("connectDatabase failed",e)
+#             return False
+#
+#         self.cur = self.conn.cursor()
+#         return True
+#
+#     def Execute(self):
+#         self.ConnectionDatabase()
+#         try:
+#             if self.conn and self.cur:
+#                 self.cur.execute(self.sql,self.params)
+#                 self.conn.commit()
+#
+#         except Exception as e:
+#             logging.error("execute failed: "+ self.sql,e)
+#             logging.error("params :" + self.params,e)
+#             return False
+#         return True
+#
+#     def Select(self):
+#         self.ConnectionDatabase()
+#         self.cur.Execute(self.sql,self.params)
+#         resultData = self.cur.fetchall()
+#         print(resultData)
+#         return resultData
+#
+#
+#     def Close(self):
+#         if self.conn and self.cur:
+#             self.cur.close()
+#             self.conn.close()
+#         return True
