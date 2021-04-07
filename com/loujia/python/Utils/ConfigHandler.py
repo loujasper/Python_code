@@ -13,7 +13,7 @@ class ConfigParse(object):
         pass
 
     @classmethod
-    def get_db_config(cls):#使用类方法，cls就是制定本身
+    def get_db_config(cls):#使用类方法，cls就是指定本身
 
         cls.cfp = ConfigParser()
         cls.cfp.read(config_path) #读取配置文件目录
